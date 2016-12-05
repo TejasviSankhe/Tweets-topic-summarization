@@ -154,14 +154,17 @@ var total = 'Found ' + docs.length + ' results';
 $('#results').prepend('<div>' + total + '</div>');
 }
 
-function on_search() {
+function on_search() 
+{
 var query = $('#query').val();
-if (query.length == 0) {
+if (query.length == 0) 
+{
 return;
 }
 
-var url='https://54.227.230.126:8983/solr/#/proj4/select?indent=on&q='+query+'&start=0&rows=50&indent=on&wt=json';
+var url='https://54.227.230.126:8983/solr/#/proj4/select?indent=on&q='+query+'&start=0&rows=50&indent=on&wt=json&callback=?&json.wrf=on_data';
 $.getJSON(url);
+console.log(url);
 }
 
 function on_ready() {
