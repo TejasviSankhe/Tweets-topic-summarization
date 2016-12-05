@@ -160,7 +160,7 @@ if (query.length == 0) {
 return;
 }
 
-var url='https://ec2-54-227-230-126.compute-1.amazonaws.com:8983/solr/#/proj4/select?indent=on&q='+query+'&version=2.2&start=0&rows=50&indent=on&wt=json&callback=?&json.wrf=on_data';
+var url='https://ec2-54-227-230-126.compute-1.amazonaws.com:8983/solr/#/proj4/select?indent=on&q='+query+'&start=0&rows=50&indent=on&wt=json&callback=?&json.wrf=on_data';
 $.getJSON(url);
 }
 
