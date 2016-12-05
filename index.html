@@ -160,7 +160,7 @@ if (query.length == 0) {
 return;
 }
 
-var url='https://54.227.230.126:8983/solr/#/proj4/select?indent=on&q='+query+'&start=0&rows=50&indent=on&wt=json&callback=?&json.wrf=on_data';
+var url='https://54.227.230.126:8983/solr/#/proj4/select?indent=on&q='+query+'&start=0&rows=50&indent=on&wt=json';
 $.getJSON(url);
 }
 
