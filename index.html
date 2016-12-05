@@ -66,6 +66,21 @@
       </div>
     </nav>
 
+ <div id="rs"></div>
+  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js'></script>
+  <script type='text/javascript'>
+    $.getJSON("http://ec2-54-227-230-126.compute-1.amazonaws.com:8983/solr/proj4/select/?q=Russia&wt=json&json.wrf=?&indent=true", function(result){
+    var Parent = document.getElementById('rs');
+    for (var i = 0; i < result.response.docs.length; i++) {
+      var thisResult = "<b>" + result.response.docs[i].lang + "</b><br>" + result.response.docs[i].id
+      + ", " + result.response.docs[i].text_en + "<br>";
+      var NewDiv = document.createElement("DIV");
+      NewDiv.innerHTML = thisResult;
+      Parent.appendChild(NewDiv);
+    }
+  });
+</script>
+
     <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
