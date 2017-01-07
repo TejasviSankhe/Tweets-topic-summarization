@@ -304,7 +304,7 @@ console.log("XXnumber_of_pages   " + number_of_pages);
 				alert("Please input a search query");
 			}else{
 
-				var solrInstance = "http://54.191.105.98:8983/solr/gettingstarted/";
+				var solrInstance = "http://****/solr/gettingstarted/";
 				var url = solrInstance + "select?fl=id,score,tweet_topic,text_en,text,created_at,user.screen_name,user.profile_image_url_https&indent=on&q="+userInput+"&rows=50&start=0&wt=json&json.wrf=callback=getJSON";
 				console.log(url);
 				populateTweetDOM(url,userInput);
@@ -472,7 +472,7 @@ console.log("XXnumber_of_pages   " + number_of_pages);
 		function populateSummaryImagesDOM(subtopic)
 		{
 			console.log(topicMax+"in Summaryy")
-			var solrInstance = "http://54.191.105.98:8983/solr/gettingstarted/";
+			var solrInstance = "http://****/solr/gettingstarted/";
 			var urld = solrInstance + "select?fq=tweet_topic="+topicMax+"AND retweet_count:[100 TO *]fl=id,tweet_topic,text_en,text,user.screen_name&indent=on&q="+subtopic+"&rows=20&start=0&wt=json&json.wrf=callback=getJSON";
 			populateTweetSummaryDOM(urld)
 
@@ -516,11 +516,11 @@ console.log("XXnumber_of_pages   " + number_of_pages);
 {
 console.log("Inside Images");
 
-var url = "https://pixabay.com/api/?key=3954926-c96c16b1864c94cdc295be765&q=Christmas+"+subtopic+"&image_type=photo&pretty=true";
+//var url = "https://pixabay.com/api/?key=****&q=Christmas+"+subtopic+"&image_type=photo&pretty=true";
 //console.log(url);
 
 
-var API_KEY = '3954926-c96c16b1864c94cdc295be765';
+var API_KEY = '****';
 var URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(subtopic)+"&pretty=true";
 //console.log(URL);
 j$.ajax({
